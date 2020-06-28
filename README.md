@@ -1,2 +1,16 @@
-# designpattern4cplusplus
-Design pattern for C++
+# Design pattern for C++
+
+## [设计原则](doc/01-设计原则.md)
+
+## 创建模式
+创建型模式关注对象的创建过程，在软件开发中应用非常广泛。
+创建型模式描述如何将对象的创建和使用分离，让用户在使用对象过程中无须关心对象的创建细节，从而降低系统耦合度，并且让系统易于修改和扩展。
+
+[简单工厂](doc/02-简单工厂.md)
+
+## 结构模式
+
+## 行为模式
+
+## 参考
+[C++设计模式](https://blog.csdn.net/sinat_21107433/category_9418696.html)
