@@ -1,0 +1,26 @@
+@startuml "figure1_simplefactory"
+caption figure1: Simple Factory
+abstract class AbstractProduct{
+  - prod_attribute1:string
+  + prod_method1()
+}
+class ConcretedProduct1{
+  + prod_method1()
+}
+class ConcretedProduct2{
+  + prod_method1()
+}
+class ConcretedProduct3{
+  + prod_method1()
+}
+class Factory{
+  + factoryMethod(productName:string):AbstractProduct
+}
+
+AbstractProduct <|-- ConcretedProduct1
+AbstractProduct <|-- ConcretedProduct2
+AbstractProduct <|-- ConcretedProduct3
+Factory .up.> ConcretedProduct1
+Factory .up.> ConcretedProduct2
+Factory .up.> ConcretedProduct3
+@enduml

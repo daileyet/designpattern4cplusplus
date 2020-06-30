@@ -1,0 +1,28 @@
+@startuml "figure2_factory"
+caption figure2: Factory
+
+abstract class AbstractFactory{
+  + getProduct():AbstractProduct
+}
+abstract class AbstractProduct{
+  + action():void
+}
+class ConcretedFactory1{  
+}
+class ConcretedFactory2{
+}
+
+class ConcretedProduct1{
+}
+class ConcretedProduct2{
+}
+
+AbstractFactory <|-- ConcretedFactory1
+AbstractFactory <|-- ConcretedFactory2
+
+AbstractProduct <|-up- ConcretedProduct1
+AbstractProduct <|-up- ConcretedProduct2
+
+ConcretedFactory1 ..> ConcretedProduct1
+ConcretedFactory2 ..> ConcretedProduct2
+@enduml
