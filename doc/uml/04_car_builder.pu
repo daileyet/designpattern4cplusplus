@@ -1,0 +1,38 @@
+@startuml "figure4.2_carbuilder"
+caption figure4.2 : Car Builder
+class AbstractCar{
+    - m_wheel:string
+    - m_body:string
+    - m_engine:string
+    + AbstractCar(wheel:string,body:string,engine:string)
+    + showInfo():void
+}
+
+class AbstractCarBuilder{
+    # m_car: AbstractCar*
+    + buildEngine():void
+    + buildBody():void
+    + buildWheel():void
+    + getCar():AbstractCar
+}
+
+class FordCar{}
+class VolvoCar{}
+class FordCarBuilder{}
+class VolvoCarBuilder{}
+
+class Cross4S{
+    - carBuilder: AbstractBuilder
+    + setCarBuilder(carBuilder:AbstractCarBuilder):void
+    + provideCar(): AbstractCar
+}
+
+AbstractCarBuilder <|-right- FordCarBuilder
+AbstractCarBuilder <|-left- VolvoCarBuilder
+AbstractCarBuilder *-down- AbstractCar
+AbstractCar <|-right FordCar
+AbstractCar <|-left- VolvoCar
+FordCarBuilder ..> FordCar
+VolvoCarBuilder ..> VolvoCar
+Cross4S o-- AbstractCarBuilder
+@enduml

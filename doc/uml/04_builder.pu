@@ -1,0 +1,30 @@
+@startuml "figure4.1_builder"
+caption figure4.1: Builder
+
+class Product{
+    - partA: string 
+    - partB: string
+}
+
+class AbstractBuilder{
+    # product: Product
+    + buildPartA(): void
+    + buildPartB(): void
+    + getProduct(): Product
+}
+
+class ConcretedBuilder{
+
+}
+
+class Director{
+    - builder: AbstractBuilder
+    + setBuilder(builder:AbstractBuilder): void
+    + create(): Product
+}
+
+AbstractBuilder *-- Product
+ConcretedBuilder .right.> Product
+AbstractBuilder <|-- ConcretedBuilder
+Director o-- AbstractBuilder
+@enduml
