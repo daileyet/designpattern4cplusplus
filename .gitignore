@@ -48,3 +48,9 @@
 
 /**/Debug
 /**/Release
+
+/**/.settings/
+/**/target
+/**/.classpath
+/**/.project
+code/Javacode/dependency-reduced-pom.xml
