@@ -1,0 +1,11 @@
+@startuml "figure6_singleton"
+caption figure6: Singleton
+
+class SingletonClass{
+    - {static} mInstance: SingletonClass
+    - SingletonClass()
+    + {static} getInstance():SingletonClass
+}
+
+SingletonClass o-- SingletonClass
+@enduml
