@@ -1,0 +1,15 @@
+@startuml "figure5_prototype"
+caption figure5: Prototype
+abstract class AbstractPrototype{
+    + clone():AbstractPrototype
+}
+class ConcretedPrototypeA{}
+class ConcretedPrototypeB{}
+class Client{
+    - obj:AbstractPrototype
+}
+
+AbstractPrototype <|-- ConcretedPrototypeA
+AbstractPrototype <|-- ConcretedPrototypeB
+Client .right.> AbstractPrototype
+@enduml
