@@ -1,0 +1,17 @@
+@startuml "figure7_adapter_object"
+caption figure7: Object Adapter
+class Target{
+    + targetInterface(): void
+}
+
+class Adaptee{
+    + originalInterface(): void
+}
+
+class Adapter{
+    - adaptee: Adaptee    
+}
+
+Adapter --|> Target
+Adapter ..> Adaptee
+@enduml
