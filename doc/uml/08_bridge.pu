@@ -1,0 +1,27 @@
+@startuml   "figure8_bridge"
+caption figure8: Bridge
+
+class Abstraction{
+    + action(): void
+    - implRef: Implementor*
+}
+
+class Implementor{
+    + actionImpl(): void
+}
+
+Abstraction o-right- Implementor
+
+class RefinedAbstraction_A{}
+class RefinedAbstraction_B{}
+
+class ConcreteImplementor_A{}
+class ConcreteImplementor_B{}
+
+Abstraction <|-- RefinedAbstraction_A
+Abstraction <|-- RefinedAbstraction_B
+
+Implementor <|-- ConcreteImplementor_A
+Implementor <|-- ConcreteImplementor_B
+
+@enduml
