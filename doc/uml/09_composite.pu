@@ -1,0 +1,31 @@
+@startuml "figure9_composite_safe"
+caption figure9: Safe Composite
+
+class Component{}
+class Leaf{}
+class Composite{
+    + add(com:Component*): void
+    + remove(com:Component*): void
+    + getChild(i:int): Component*
+}
+
+Component <|-right- Leaf
+Component <|-- Composite
+Composite o-- Component
+@enduml
+
+@startuml "figure9_composite_glass"
+caption figure9: Glass Composite
+
+class Component{
+    + add(com:Component*): void
+    + remove(com:Component*): void
+    + getChild(i:int): Component*
+}
+class Leaf{}
+class Composite{}
+
+Component <|-right- Leaf
+Component <|-- Composite
+Composite o-- Component
+@enduml

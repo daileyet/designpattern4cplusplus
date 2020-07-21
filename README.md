@@ -25,7 +25,7 @@
 
 [桥接模式 Bridge](doc/09-桥接.md)
 
-组合模式 Composite
+[组合模式 Composite](doc/10-组合.md)
 
 装饰模式 Decorator
 
