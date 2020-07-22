@@ -27,7 +27,7 @@
 
 [组合模式 Composite](doc/10-组合.md)
 
-装饰模式 Decorator
+[装饰模式 Decorator](doc/11-装饰.md)
 
 外观模式 Facade
 

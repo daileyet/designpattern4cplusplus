@@ -1,0 +1,15 @@
+@startuml "figure11_facade"
+caption figure11: Facade
+
+class Facade{}
+class SubsysA{}
+class SubsysB{}
+class SubsysC{}
+class Client{}
+
+Facade --> SubsysA
+Facade --> SubsysB
+Facade --> SubsysC
+Client ..> Facade
+
+@enduml
