@@ -29,9 +29,9 @@
 
 [装饰模式 Decorator](doc/11-装饰.md)
 
-外观模式 Facade
+[外观模式 Facade](doc/12-外观.md)
 
-享元模式 Flyweight
+[享元模式 Flyweight](doc/13-享元.md)
 
 代理模式 Proxy
 

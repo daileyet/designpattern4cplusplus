@@ -1,0 +1,20 @@
+@startuml "figure12_flyweight"
+caption figure12: Flyweight
+
+class Flyweight{}
+class ConcreteFlyweight{
+    - key:string
+}
+class UnsharedConcreteFlyweight{}
+
+Flyweight <|-- ConcreteFlyweight
+Flyweight <|-- UnsharedConcreteFlyweight
+
+
+class FlyweightFactory{
+    - flyweights: Map<string,FlyWeight>
+    + getFlyWeight(key:string): FlyWeight;
+}
+
+FlyweightFactory o-- Flyweight
+@enduml
