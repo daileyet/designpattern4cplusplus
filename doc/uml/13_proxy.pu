@@ -1,0 +1,21 @@
+@startuml "figure13_proxy"
+caption figure13: Proxy
+
+class Subject{
+    + action(): void
+}
+
+class Proxy{
+    - realSub: RealSubject
+}
+
+class RealSubject{}
+
+class Client{}
+
+Subject <|-- RealSubject
+Subject <|-- Proxy
+Proxy -right-> RealSubject
+Client ..> Subject 
+
+@enduml
