@@ -38,7 +38,7 @@
 ## 行为模式
 行为型模式主要用于描述对类或对象怎样交互和怎样分配职责。
 
-责任链模式 Chain of Responsibility
+[责任链模式 Chain of Responsibility](doc/15-责任链.md)
 
 命令模式 Command
 

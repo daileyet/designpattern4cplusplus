@@ -1,0 +1,17 @@
+@startuml "figure14_chain"
+caption figure14: Chain
+
+class Handler{
+    - successor: Handler*
+    + handleRequest()
+}
+
+class ConcreteHandlerA{}
+class ConcreteHandlerB{}
+
+Handler <|-- ConcreteHandlerA
+Handler <|-- ConcreteHandlerB
+
+Handler o-- Handler
+
+@enduml
