@@ -1,0 +1,26 @@
+@startuml "figure15_command"
+caption figure 16: Command
+
+class Command{
+    + execute(): void
+}
+
+class ConcreteCommand{}
+
+class Invoker{
+    - commandList: List<Command>
+    + invoke(): void
+}
+
+class Receiver{
+    + action(): void
+}
+
+class Client{}
+
+Command <|-- ConcreteCommand
+Invoker o-right- Command
+Receiver  <-right- ConcreteCommand
+Client .up.> Invoker
+Client ..> ConcreteCommand
+@enduml

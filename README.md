@@ -40,7 +40,7 @@
 
 [责任链模式 Chain of Responsibility](doc/15-责任链.md)
 
-命令模式 Command
+[命令模式 Command](doc/16-命令.md)
 
 解释器模式 Interpreter
 
