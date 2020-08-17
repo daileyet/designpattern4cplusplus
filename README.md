@@ -42,7 +42,7 @@
 
 [命令模式 Command](doc/16-命令.md)
 
-解释器模式 Interpreter
+[解释器模式 Interpreter](doc/17-解释器.md)
 
 迭代器模式 Iterator
 

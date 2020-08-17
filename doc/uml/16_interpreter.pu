@@ -1,0 +1,19 @@
+@startuml "figure16_interpreter"
+caption figure 16: Interpreter
+
+class Context{}
+class AbstractExpression{
+    + interpret(context: Context*): void
+}
+class TerminalExpression{}
+class NonterminalExpression{}
+class Client{}
+
+AbstractExpression <|-right- TerminalExpression
+AbstractExpression <|-- NonterminalExpression
+AbstractExpression --o NonterminalExpression
+AbstractExpression ..> Context
+
+Client ..> Context
+Client .right.> AbstractExpression
+@enduml

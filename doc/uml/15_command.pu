@@ -1,5 +1,5 @@
 @startuml "figure15_command"
-caption figure 16: Command
+caption figure 15: Command
 
 class Command{
     + execute(): void
