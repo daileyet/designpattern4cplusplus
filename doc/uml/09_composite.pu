@@ -1,7 +1,7 @@
 @startuml "figure9_composite_safe"
 caption figure9: Safe Composite
 
-class Component{}
+interface Component{}
 class Leaf{}
 class Composite{
     + add(com:Component*): void
@@ -17,7 +17,7 @@ Composite o-- Component
 @startuml "figure9_composite_glass"
 caption figure9: Glass Composite
 
-class Component{
+interface Component{
     + add(com:Component*): void
     + remove(com:Component*): void
     + getChild(i:int): Component*

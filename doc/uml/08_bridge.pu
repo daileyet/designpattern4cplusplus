@@ -1,12 +1,12 @@
 @startuml   "figure8_bridge"
 caption figure8: Bridge
 
-class Abstraction{
+abstract class Abstraction{
     + action(): void
     - implRef: Implementor*
 }
 
-class Implementor{
+interface Implementor{
     + actionImpl(): void
 }
 

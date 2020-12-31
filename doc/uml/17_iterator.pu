@@ -1,0 +1,70 @@
+@startuml "figure17_iterator"
+caption figure 17: Iterator
+
+interface Iterator{
+    + first(): object
+    + next(): object
+    + hasNext(): boolean
+}
+
+class ConcreteIterator{
+
+}
+
+interface Aggregate{
+    + createIterator(): Iterator
+    + add(obj:object): void
+    + remove(obj:object): void
+}
+
+class ConcreteAggregate{
+    - list: List<object>
+}
+
+ConcreteIterator -up-|> Iterator
+ConcreteAggregate -up-|> Aggregate
+
+ConcreteAggregate -> ConcreteIterator
+ 
+
+@enduml
+
+
+@startuml "figure17_iterator_case"
+caption figure 17: Iterator Case
+
+class Post{
+    + show(): void
+}
+
+interface Iterator{
+    + next(): void
+    + hasNext(): boolean
+}
+
+class PostIterator{
+    - box: PostBox*
+    - index: int
+    - total: int
+}
+
+interface Aggregate{
+    + createIterator(): Iterator
+}
+
+class PostBox{
+    - postList: std::vector<Post>
+    + PostBox(list:std::vector<Post>)
+    + switchAndShow(index:int)
+}
+
+PostIterator -up-|> Iterator
+PostBox -up-|> Aggregate
+
+PostBox "1" *-- "many" Post
+
+PostIterator -left-> Post
+
+PostBox ..> PostIterator
+
+@enduml

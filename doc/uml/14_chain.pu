@@ -1,7 +1,7 @@
 @startuml "figure14_chain"
 caption figure14: Chain
 
-class Handler{
+abstract class Handler{
     - successor: Handler*
     + handleRequest()
 }

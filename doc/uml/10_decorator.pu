@@ -1,11 +1,11 @@
 @startuml "figure10_decorator"
 caption figure10: Decorator
 
-class AbstractComponent{
+abstract class AbstractComponent{
     + behavior(): void
 }
 class ConcreteComponent{}
-class AbstractDecorator{}
+abstract class AbstractDecorator{}
 class ConcreteDecorator{
     + newBehavior(): void
 }
