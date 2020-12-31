@@ -2,7 +2,7 @@
 caption figure 16: Interpreter
 
 class Context{}
-class AbstractExpression{
+abstract class AbstractExpression{
     + interpret(context: Context*): void
 }
 class TerminalExpression{}

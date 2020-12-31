@@ -1,7 +1,7 @@
 @startuml "figure15_command"
 caption figure 15: Command
 
-class Command{
+interface Command{
     + execute(): void
 }
 

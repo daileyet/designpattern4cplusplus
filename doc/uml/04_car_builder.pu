@@ -1,6 +1,6 @@
 @startuml "figure4.2_carbuilder"
 caption figure4.2 : Car Builder
-class AbstractCar{
+abstract class AbstractCar{
     - m_wheel:string
     - m_body:string
     - m_engine:string
@@ -8,7 +8,7 @@ class AbstractCar{
     + showInfo():void
 }
 
-class AbstractCarBuilder{
+abstract class AbstractCarBuilder{
     # m_car: AbstractCar*
     + buildEngine():void
     + buildBody():void

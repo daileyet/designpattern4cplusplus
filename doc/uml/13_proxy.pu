@@ -1,7 +1,7 @@
 @startuml "figure13_proxy"
 caption figure13: Proxy
 
-class Subject{
+interface Subject{
     + action(): void
 }
 

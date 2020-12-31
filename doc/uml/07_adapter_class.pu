@@ -2,11 +2,11 @@
 
 caption figure7: Class Adapter
 
-class Target{
+interface Target{
     + targetInterface(): void
 }
 
-class Adaptee{
+interface Adaptee{
     + originalInterface(): void
 }
 

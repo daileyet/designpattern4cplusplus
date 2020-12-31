@@ -1,7 +1,7 @@
 @startuml "figure12_flyweight"
 caption figure12: Flyweight
 
-class Flyweight{}
+interface Flyweight{}
 class ConcreteFlyweight{
     - key:string
 }
