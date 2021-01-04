@@ -38,7 +38,7 @@ class Post{
 }
 
 interface Iterator{
-    + next(): void
+    + next(): int
     + hasNext(): boolean
 }
 

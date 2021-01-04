@@ -1,0 +1,31 @@
+@startuml "figure18_mediator"
+caption figure 18: mediator
+
+abstract class Colleague{
+    # mediator: Mediator*
+    + setMediator(Mediator* mediator)
+    + send(): void
+    + receive(): void
+}
+
+interface Mediator{
+    + register(Colleague* colleague): void
+    + relay(Colleague* colleague): void
+}
+
+Mediator -left-o Colleague
+
+class ConcreteMediator{
+    - list: List<Colleague*>
+}
+
+ConcreteMediator -up-|> Mediator
+ConcreteMediator o-up- Colleague
+
+class ConcreteColleague1{}
+class ConcreteColleague2{}
+
+ConcreteColleague1 -up-|> Colleague
+ConcreteColleague2 -up-|> Colleague
+
+@enduml
