@@ -44,7 +44,7 @@
 
 [解释器模式 Interpreter](doc/17-解释器.md)
 
-迭代器模式 Iterator
+[迭代器模式 Iterator](doc/18-迭代器.md)
 
 中介者模式 Mediator
 
