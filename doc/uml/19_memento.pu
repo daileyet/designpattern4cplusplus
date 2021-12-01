@@ -1,0 +1,50 @@
+@startuml "figure19_memento"
+caption figure 19: Memento
+
+class Originator{
+    - state: State
+    + createMemento() : Memento
+    + restoreMemento(memento:Memento) : void
+}
+
+class Memento{
+    - state: State    
+    + getState(): State
+}
+
+class Caretaker{
+    - memento: Memento
+    + getMemento(): Memento
+    + setMemento(memento:Memento): void
+}
+
+Originator --> Memento
+
+Caretaker o--> Memento
+@enduml
+
+
+@startuml "figure19_memento_case"
+caption figure 19: Memento Case
+
+class Step{
+    - state: std::string
+    + getState(): std::string
+}
+
+class Player{
+    - state: std::string
+    + doAction(state:std::string) : Step*
+    - applyAction(step:Step*): void
+}
+
+class StepsManager{
+    - mementos : std::stack<Step*>
+    + push(step:Step*)
+    + pop(): Step*
+}
+
+Player --> Step
+StepsManager o--> Step
+
+@enduml

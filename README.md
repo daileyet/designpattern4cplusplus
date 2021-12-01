@@ -48,7 +48,7 @@
 
 [中介者模式 Mediator](doc/19-中介者.md)
 
-备忘录模式 Memento
+[备忘录模式 Memento](doc/20-备忘录.md)
 
 观察者模式 Observer
 
