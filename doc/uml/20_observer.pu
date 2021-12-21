@@ -1,0 +1,58 @@
+@startuml "figure20_observer"
+caption figure 20: Observer
+
+interface Subject{
+    + addObserver(observer:Observer)
+    + removeObserver(observer:Observer)
+    + notifyObservers()
+}
+
+interface Observer{
+    + update()
+}
+
+class ConcreteSubject{
+}
+
+class ConcreteObserver{
+
+}
+
+Subject <|-- ConcreteSubject
+Observer <|-- ConcreteObserver
+
+Subject -right-> Observer : use
+@enduml
+
+
+@startuml "figure20_observer_case"
+caption figure 20: Observer case
+
+interface Product{
+    + addBuyer(user:Buyer*)
+    + removeBuyer(user:Buyer*)
+    + notifyBuyers()
+    + setAmount(amount:int)
+}
+
+interface Buyer{
+    + action()
+}
+
+class IPhoneX{
+    - buyers : std::List<Buyer*>
+    - amount : int
+}
+
+class BuyerA{}
+
+class BuyerB{}
+
+
+
+Product <|-- IPhoneX
+Buyer <|-- BuyerA
+Buyer <|-- BuyerB
+
+Product -right-> Buyer : use
+@enduml

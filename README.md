@@ -50,7 +50,7 @@
 
 [备忘录模式 Memento](doc/20-备忘录.md)
 
-观察者模式 Observer
+[观察者模式 Observer](doc/21-观察者.md)
 
 状态模式 State
 
