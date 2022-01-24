@@ -1,0 +1,108 @@
+@startuml "figure21_state"
+caption figure 21: State
+
+abstract class State{
+    {abstract} + handle(context:Context*) : void
+}
+
+class Context{
+    - state : State*
+    + getState() : State*
+    + changeState(state:State*):void
+    + request():void
+}
+
+class ConcreteStateA{
+    + handle(context:Context*) : void
+}
+
+class ConcreteStateB{
+    + handle(context:Context*) : void
+}
+
+
+Context o-right-> State
+
+ConcreteStateA -up-|> State
+ConcreteStateB -up-|> State
+
+note left of Context::request
+state->handle(this)
+end note
+@enduml
+
+@startuml "figure21_state_case_state"
+caption figure 21: State Case State
+[*] -up-> New
+New : Thread new state
+New -right-> Ready : start()
+Ready: Thread ready state
+Ready -right-> Running : 获得CPU时间
+Running : Thread running state
+Running -right-> Dead : stop()
+Dead : Thread dead state
+Running --> Blocked : suspend()
+Blocked : Thread blocked state
+Blocked --> Ready : resume()
+Dead --> [*]
+@enduml
+
+
+@startuml "figure21_state_case"
+caption figure 21: State Case
+
+enum ThreadStateName{
+    NEW
+    READY
+    RUNNING
+    BLOCKED
+    DEAD
+}
+
+abstract class ThreadState{
+    # stateName: ThreadStateName
+    + getStateName(): ThreadStateName
+}
+
+class NewState {
+    + start(context:ThreadContext*): void
+}
+
+class ReadyState{
+    + acquire(context:ThreadContext*): void
+}
+
+class RunningState{
+    + suspend(context:ThreadContext*): void
+    + stop(context:ThreadContext*): void
+}
+
+class BlockedState{
+    + resume(context:ThreadContext*): void
+}
+
+class DeadState{
+}
+
+class ThreadContext{
+    - state: ThreadState*
+    + changeState(state: ThreadState*) : void
+    + getState() : ThreadState*
+    + start():void
+    + acquireCPU():void
+    + suspend():void
+    + stop():void
+    + resume():void
+}
+
+NewState -up-|> ThreadState
+ReadyState -up-|> ThreadState
+RunningState -up-|> ThreadState
+BlockedState --|> ThreadState
+DeadState --|> ThreadState
+
+ThreadState -left-> ThreadStateName
+
+ThreadState -left-o ThreadContext
+
+@enduml

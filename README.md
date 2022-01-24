@@ -52,7 +52,7 @@
 
 [观察者模式 Observer](doc/21-观察者.md)
 
-状态模式 State
+[状态模式 State](doc/22-状态.md)
 
 策略模式 Strategy
 

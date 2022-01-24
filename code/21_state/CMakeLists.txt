@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-PROJECT(observer_test)
+PROJECT(state_test)
 
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
@@ -16,8 +16,8 @@ endif()
 
 
 SET(SRC_LIST client.cpp)
-SET(PATTERN_SRC observer_types.cpp)
+SET(PATTERN_SRC state_types.cpp)
 
 include_directories(./)
 
-ADD_EXECUTABLE(observer_test ${SRC_LIST} ${PATTERN_SRC})
+ADD_EXECUTABLE(state_test ${SRC_LIST} ${PATTERN_SRC})

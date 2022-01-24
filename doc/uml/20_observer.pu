@@ -2,13 +2,13 @@
 caption figure 20: Observer
 
 interface Subject{
-    + addObserver(observer:Observer)
-    + removeObserver(observer:Observer)
-    + notifyObservers()
+    + addObserver(observer:Observer) : void
+    + removeObserver(observer:Observer) : void
+    + notifyObservers() : void
 }
 
 interface Observer{
-    + update()
+    + update() : void
 }
 
 class ConcreteSubject{
@@ -29,14 +29,14 @@ Subject -right-> Observer : use
 caption figure 20: Observer case
 
 interface Product{
-    + addBuyer(user:Buyer*)
-    + removeBuyer(user:Buyer*)
-    + notifyBuyers()
-    + setAmount(amount:int)
+    + addBuyer(user:Buyer*) : void
+    + removeBuyer(user:Buyer*) : void
+    + notifyBuyers() : void
+    + setAmount(amount:int) : void
 }
 
 interface Buyer{
-    + action()
+    + action() : void
 }
 
 class IPhoneX{
