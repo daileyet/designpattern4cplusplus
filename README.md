@@ -56,7 +56,7 @@
 
 [策略模式 Strategy](doc/23-策略.md)
 
-模板方法模式 Template Method
+[模板方法模式 Template Method](doc/24-模板方法.md)
 
 访问者模式 Visitor
 

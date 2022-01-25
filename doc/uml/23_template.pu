@@ -1,0 +1,57 @@
+@startuml "figure23_template"
+caption figure 23: Template Method
+
+abstract class AbstractClass{
+    + templateMethod(): void
+    + step1Method():void
+    {abstract} + step2Method():void
+    {abstract} + step3Method():void
+}
+
+class ConcreteAClass{
+    + step2Method():void
+    + step3Method():void
+}
+
+class ConcreteBClass{
+    + step1Method():void
+    + step2Method():void
+    + step3Method():void
+}
+
+
+ConcreteAClass -up-|> AbstractClass
+ConcreteBClass -up-|> AbstractClass
+
+@enduml
+
+
+@startuml "figure23_template_case"
+caption figure 23: Template Method Case
+
+abstract class GoOfficeByCar{
+    + action() :void
+    + openDoor():void
+    {abstract} + powerOn():void
+    {abstract} + drive():void
+    {abstract} + parking():void
+    {abstract} + powerOff():void
+    + closeDoor():void
+}
+
+class GoOfficeByCarGolf{
+    + powerOn():void
+    + drive():void
+    + parking():void
+}
+
+class GoOfficeByCarXiaoMi{
+    + powerOn():void
+    + drive():void
+    + parking():void
+}
+
+GoOfficeByCarGolf -up-|> GoOfficeByCar
+GoOfficeByCarXiaoMi -up-|> GoOfficeByCar
+
+@enduml
