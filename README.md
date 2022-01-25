@@ -54,7 +54,7 @@
 
 [状态模式 State](doc/22-状态.md)
 
-策略模式 Strategy
+[策略模式 Strategy](doc/23-策略.md)
 
 模板方法模式 Template Method
 

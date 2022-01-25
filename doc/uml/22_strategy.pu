@@ -1,0 +1,62 @@
+@startuml "figure22_strategy"
+caption figure 22: Strategy
+
+abstract class Strategy{
+    {abstract} + strategyMethod():void
+}
+
+class ConcreteStrategyA{
+
+}
+
+class ConcreteStrategyB{
+
+}
+
+class Context{
+    - strategy : Strategy*
+    + setStrategy(strategy:Strategy*):void
+    + getStrategy(): Strategy*
+    + strategyMethod():void
+}
+
+ConcreteStrategyA -up-|> Strategy
+ConcreteStrategyB -up-|> Strategy
+Context o-left- Strategy
+
+@enduml
+
+
+@startuml "figure22_strategy_case"
+caption figure 22: Strategy Case
+
+abstract class TripMode{
+    {abstract} + goOut():void 
+}
+
+class ByTrain{
+    + goOut():void 
+}
+
+class ByFlight{
+    + goOut():void 
+}
+
+class BySelfDrive{
+    + goOut():void 
+}
+
+class TripContext{
+    - mode : TripMode*
+    + setTripMode(mode:TripMode*):void
+    + getTripMode():TripMode*
+    + goTrip():void
+}
+
+ByTrain -up-|> TripMode
+ByFlight -up-|> TripMode
+BySelfDrive -up-|> TripMode
+
+TripContext o-left- TripMode
+
+@enduml
