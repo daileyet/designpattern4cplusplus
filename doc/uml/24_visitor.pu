@@ -1,0 +1,103 @@
+@startuml "figure24_visitor"
+caption figure 24: Visitor
+
+abstract class Element{
+    {abstract} + accept(visitor:Visitor*):void
+}
+
+class ConcreteElementA{
+    + operationA():void
+}
+
+class ConcreteElementB{
+    + operationB():void
+}
+
+class ObjectContainer{
+    - list:List<Element*>
+    + accept(visitor:Visitor*):void
+    + add(element:Element*):void
+    + remove(element:Element*):void
+}
+
+abstract class Visitor{
+    {abstract} + visit(element:ConcreteElementA*):void
+    {abstract} + visit(element:ConcreteElementB*):void
+}
+
+class ConcreteVisitorA{
+
+}
+
+class ConcreteVisitorB{
+    
+}
+
+class VisitorClient{}
+
+ConcreteElementA -up-|> Element
+ConcreteElementB -up-|> Element
+
+ConcreteVisitorA -up-|> Visitor
+ConcreteVisitorB -up-|> Visitor
+
+
+VisitorClient .left.> Visitor
+VisitorClient ..> ObjectContainer
+
+ObjectContainer o-right- Element
+
+@enduml
+
+@startuml "figure24_visitor_case"
+caption figure 24: Visitor Case
+
+abstract class Goods{
+    {abstract} + accept(visitor:Visitor*);
+    {abstract} + getWeight(): float
+    {abstract} + getPrice(): float
+}
+
+class ShopCart{
+    - list:std::vector<Goods*>
+    + accept(visitor:Visitor*):void
+    + add(element:Goods*):void
+
+}
+
+class Water{    
+    + getBrand(): std::string
+}
+
+class CocaCola{
+
+}
+
+abstract class Visitor{
+    + visit(goods:Water*):void
+    + visit(goods:CocaCola*):void
+}
+
+class Customer{
+
+}
+
+class Cashier{
+    - waterCount:int
+    - colaCount:int
+    + reset() :void
+}
+
+ShopCart o-right- Goods
+
+Water -up-|> Goods
+CocaCola -up-|> Goods
+
+Customer -up-|> Visitor
+Cashier -up-|> Visitor
+
+class Client{}
+
+Client .right.> ShopCart
+Client .left.> Visitor
+@enduml

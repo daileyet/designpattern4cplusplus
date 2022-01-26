@@ -58,7 +58,7 @@
 
 [模板方法模式 Template Method](doc/24-模板方法.md)
 
-访问者模式 Visitor
+[访问者模式 Visitor](doc/25-访问者.md)
 
 ## 参考
 [C++设计模式](https://blog.csdn.net/sinat_21107433/category_9418696.html)
